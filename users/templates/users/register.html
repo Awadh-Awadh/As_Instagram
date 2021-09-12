@@ -1,6 +1,6 @@
 {%  extends 'feed/base.html'%}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
-  {{form.as_p}}
+  {{form|crispy}}
 {% endblock %}

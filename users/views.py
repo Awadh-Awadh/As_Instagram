@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import UserCreationForm
+from .forms import registrationForm
 
 # Create your views here.
 def register(request):
-    form = UserChangeForm()
+    form = registrationForm()
     context = {
       'form':form
     }
