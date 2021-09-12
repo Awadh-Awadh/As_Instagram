@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'crispy_forms',
+    'cluodinary',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -120,7 +124,12 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#cloudinary config
+cloudinary.config( 
+  cloud_name = "die2khepc", 
+  api_key = "466655358734368", 
+  api_secret = "UVVyplom7jX1BzRXM3GjGkOZiG0" 
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 

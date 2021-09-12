@@ -8,6 +8,7 @@ django = "*"
 pillow = "*"
 psycopg2 = "*"
 django-crispy-forms = "*"
+cloudinary = "*"
 
 [dev-packages]
 
