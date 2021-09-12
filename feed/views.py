@@ -1,11 +1,11 @@
 from django.shortcuts import render
-
+from .models import Image
 # Create your views here.
 
 
 def feed(request):
-    p = "it works"
+    image = Image.objects.all()
     context = {
-      'p':p 
+      'posts':image
     }
-    return render(request, 'feed/feed.html',context)
+    return render(request, 'feed/feed.html', context)

@@ -1,34 +1,57 @@
 {%  extends 'feed/base.html'%}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
-  <div class="form">
-    <form method="POST">
-      {% csrf_token %}
-      <fieldset class = 'form-group'>
-        <legend class = "border-bottom mb-4">
-          <h1>INSTAGRAM</h1>
-        </legend>
-        {{form|crispy}}
-        <div class = 'form-group'>
-          <button class="btn btn-lg btn-primary" type = submit>
-            Log in
-          </button>
-          <div class = ' account border-top pt-3'>
-            <small class="text-muted">
-              Don't have an acount? <a href="{% url 'register' %}" class="ml-2"> Sign up</a>
-            </small>
-  
+      <div class="form-container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="image">
+              <img src="{% static 'images/ig.png' %}" alt="">
+            </div>
           </div>
-  
+          <div class="col-md-6">
+            <div class="form">
+              <div class="content">
+                <form method="POST">
+                  {% csrf_token %}
+                  <fieldset class = 'form-group'>
+                    <legend class = "border-bottom mb-4">
+                      <h1>INSTAGRAM</h1>
+                    </legend>
+                    {{form|crispy}}
+                    <div class = 'button d-grid'>
+                      <button class="btn btn-lg btn-primary" type = submit>
+                        Sign Up
+                      </button>
+              
+                    </div>
+              
+                  </fieldset>
+                </div>
+                
+                </form>
+                
+              </div>
+              <div class = ' account border-top pt-3'>
+                <small class=" ml-3 text-muted">
+                  Don't have an acount?   <a href="{% url 'register' %}" class="ml-2"> Sign up</a>
+                </small>
+              
+              </div>
+          </div>
+          
+        </div>
+        
+        
+          
         </div>
   
-      </fieldset>
-    </form>
-  </div>
   
+ 
 </div>
+
     
 
 {% endblock content %}

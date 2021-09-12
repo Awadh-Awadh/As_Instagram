@@ -2,3 +2,60 @@
 h1{
   font-family: 'Satisfy', cursive;
 }
+
+legend{
+  text-align: center;
+  padding: 2rem;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-content:center;
+}
+.form,.account{
+  width: 500px;
+  height: auto;
+  border: 1px solid #000;
+  background-color: #F7F6F2;
+  margin: 3rem auto 0 auto;
+}
+.content, .extra{
+  margin: 2rem 2rem;
+}
+.button{
+  margin: 2rem 0;
+}
+
+.image{
+  margin-top: 2rem !important;
+
+}
+.image img{
+  height: 500px;
+}
+#body,#headline{
+  background-color: #000 !important;
+}
+.feed-photo{
+  width: 400px;
+  height: 400px;
+  
+}
+.head-photo{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  box-shadow: 
+  1px 1px #ff4e50,
+  -1px -1px #ff4e50;
+  cursor: pointer;
+  
+}
+.top-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.header{
+  padding: 2rem 2rem;
+}

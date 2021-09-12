@@ -1,6 +1,48 @@
+
 {% extends 'feed/base.html' %}
 
-
+{% load static %}
 {% block content %}
- <h1>{{p}}</h1>
+
+<section id="top">
+  <div class="container">
+    <div class="top-header">
+      <div class="top-flex">
+       <a href=""><h1>Instagram</h1></a> 
+        <div class="search">
+          <form action="">
+            <input type="serach">
+          </form>
+  
+        </div>
+        <div class="icon">
+          <a href=""><i class="fas fa-house-user"></i></a>
+          <a href=""><i class="far fa-comment-dots"></i></a>
+          <a href=""><i class="far fa-heart"></i></a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+{% for post in posts %}
+  <section id="headline">
+    <div class="header">
+      <div class="feed-info">
+        <img class = 'head-photo'src="{{post.image.url}}" alt="">
+       </div>
+    </div>
+  </section>
+  
+  
+  <section id = "body">
+    <div class="feed-info">
+     <img class = 'feed-photo'src="{{post.image.url}}" alt="">
+    </div>
+  </section>
+
+
+{% endfor %}
+
+ 
 {% endblock %}

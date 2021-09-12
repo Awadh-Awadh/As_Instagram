@@ -4,17 +4,6 @@ from .forms import RegistrationForm
 from django.contrib import messages
 
 
-# Create your views here.
-# def register(request):
-#     form = RegistrationForm()
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('login')  
-#     return render(request, 'users/register.html', { 'form':form})
-
-
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
