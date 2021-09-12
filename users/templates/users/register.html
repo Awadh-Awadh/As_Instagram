@@ -1,12 +1,35 @@
 {%  extends 'feed/base.html'%}
 {% load crispy_forms_tags %}
 
+
 {% block content %}
-<div class="contaoner-fluid">
+<div class="container">
   <div class="form">
-    {{form|crispy}}
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class = 'form-group'>
+        <legend class = "border-bottom mb-4">
+          <h1>INSTAGRAM</h1>
+        </legend>
+        {{form|crispy}}
+        <div class = 'form-group'>
+          <button class="btn btn-lg btn-primary" type = submit>
+            Sign Up
+          </button>
+          <div class = ' account border-top pt-3'>
+            <small class="text-muted">
+              Already have an acount? <a href="{% url 'login' %}" class="ml-2"> Log In</a>
+            </small>
+  
+          </div>
+  
+        </div>
+  
+      </fieldset>
+    </form>
   </div>
   
 </div>
- 
-{% endblock %}
+    
+
+{% endblock content %}
