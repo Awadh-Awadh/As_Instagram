@@ -33,11 +33,11 @@ legend{
 .image img{
   height: 500px;
 }
-#body,#headline{
+/* #body,#headline{
   background-color: #000 !important;
-}
+} */
 .feed-photo{
-  width: 400px;
+  width: 100%;
   height: 400px;
   
 }
@@ -58,4 +58,14 @@ legend{
 
 .header{
   padding: 2rem 2rem;
+}
+.feed-content{
+  border: 1px solid #888784;;
+}
+.top-header{
+  margin-top: 2rem;
+}
+a{
+  color: #000;
+  text-decoration: none;
 }
