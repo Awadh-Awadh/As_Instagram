@@ -69,3 +69,16 @@ a{
   color: #000;
   text-decoration: none;
 }
+.profile-pic{
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+}
+.profile-info{
+  display: flex;
+  margin: 0 2rem;
+}
+.edit-profile{
+  margin: 0 2rem;
+
+}

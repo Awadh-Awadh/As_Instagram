@@ -1,0 +1,35 @@
+{% extends 'feed/base.html' %}
+
+
+{% block content %}
+{% include 'feed/top.html' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="profile-image">
+       <img class = "profile-pic"src=" {{user.profile.pp.url}}" alt="{{user.user}}">       
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="profile-info">
+        <div class="name">
+          <h3>
+            {{user.username}}
+          </h3>
+        </div>
+        <div class="edit-profile">
+          <a href="">
+            <button class =" btn btn-lg btn-outline-dark">Edit Profile</button>
+          </a>
+        </div>
+        
+      </div>
+      <div class="following">
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

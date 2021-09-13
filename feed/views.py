@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Image
+from .models import Image,Profile
 # Create your views here.
 
 
@@ -12,6 +12,6 @@ def feed(request):
 
 def dms(request):
     return render(request, 'feed/dms.html')
-    
+
 def profile(request):
-  return render(request, 'feed/profile.html')
+   return render(request, 'feed/profile.html')
