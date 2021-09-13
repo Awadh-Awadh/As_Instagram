@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-  path('feed/',views.feed, name='feed')
-]
+  path('feed/',views.feed, name='feed'),
+  path('dm/',views.dms, name = 'dm'),
+  path('profile/',views.profile, name = 'profile')
+  ]

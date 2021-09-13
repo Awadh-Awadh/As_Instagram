@@ -9,3 +9,9 @@ def feed(request):
       'posts':image
     }
     return render(request, 'feed/feed.html', context)
+
+def dms(request):
+    return render(request, 'feed/dms.html')
+    
+def profile(request):
+  return render(request, 'feed/profile.html')
