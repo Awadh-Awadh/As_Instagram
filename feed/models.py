@@ -10,6 +10,7 @@ class Image(models.Model):
     profile = models.ForeignKey("Profile", on_delete=models.CASCADE)
     likes = models.IntegerField()
     comments = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 
