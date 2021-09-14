@@ -16,3 +16,6 @@ def dms(request):
 def profile(request):
    
    return render(request, 'feed/profile.html')
+
+def edit(request):
+    return render(request, 'feed/pedit.html')
