@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Image,Profile,User
+from .models import Image,Profile,User,Comments
 # Create your views here.
 
 
@@ -14,8 +14,15 @@ def dms(request):
     return render(request, 'feed/dms.html')
 
 def profile(request):
-   
-   return render(request, 'feed/profile.html')
+    logged_in_user = request.user
+    posts = Image.objects.filter(user=logged_in_user).count()
+    print(posts)
+    context = {
+      'posts':posts
+    }
+
+    
+    return render(request, 'feed/profile.html',context)
 
 def edit(request):
     return render(request, 'feed/pedit.html')
