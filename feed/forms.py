@@ -5,7 +5,7 @@ class UpdateUser(forms.ModelForm):
     email = forms.EmailField()
     class Meta:
         model = User
-        fields = ['username','username']
+        fields = ['username','email']
 
 class UpdateProfile(forms.ModelForm):
     class Meta:
