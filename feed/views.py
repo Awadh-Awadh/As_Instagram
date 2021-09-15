@@ -45,9 +45,15 @@ def edit(request):
     return render(request, 'feed/pedit.html',context)
 
 def post(request):
-    post_form = Post()
-    context = {
-        'form':post_form
-      }
+  if request.method == 'POST':
+      form = Post(request.POST,request.Files)
+      if form.is_valid():
+          form.save()
+          return redirect('feed')
+      else:
+          post_form = Post()
+          context = {
+              'form':post_form
+            }
 
-    return render(request, 'feed/post.html',context)
+  return render(request, 'feed/post.html',context)
