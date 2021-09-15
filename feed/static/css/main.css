@@ -57,13 +57,15 @@ legend{
 .top-flex{
   display: flex;
   justify-content: space-around;
+  position: sticky;
 }
 
 .header{
   padding: 2rem 2rem;
 }
 .feed-content{
-  border: 1px solid #888784;;
+  border: 1px solid #888784;
+  margin: 1rem 0;
 }
 .top-header{
   margin-top: 2rem;

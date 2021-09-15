@@ -1,7 +1,7 @@
 {% extends 'feed/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-<form action="{% url 'profile' %}" method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
 
   {{form|crispy}}

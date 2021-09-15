@@ -15,7 +15,7 @@ class Image(models.Model):
     def __str__(self):
         return self.name
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     image = models.OneToOneField(Image, on_delete=models.CASCADE)
     pp = CloudinaryField('images')
     bio = models.TextField()

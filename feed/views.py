@@ -1,19 +1,20 @@
 from django.shortcuts import redirect, render
 from .models import Image,Profile,User,Comments
 from .forms import UpdateProfile, UpdateUser,Post
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required
 def feed(request):
     image = Image.objects.all()
     context = {
       'posts':image
     }
     return render(request, 'feed/feed.html', context)
-
+@login_required
 def dms(request):
     return render(request, 'feed/dms.html')
-
+@login_required
 def profile(request):
     logged_in_user = request.user
     posts = Image.objects.filter(user=logged_in_user).count()
@@ -45,15 +46,15 @@ def edit(request):
     return render(request, 'feed/pedit.html',context)
 
 def post(request):
-  if request.method == 'POST':
-      form = Post(request.POST,request.Files)
-      if form.is_valid():
-          form.save()
-          return redirect('feed')
-      else:
-          post_form = Post()
-          context = {
-              'form':post_form
-            }
+    if request.method == 'POST':
+        form = Post(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('feed')
+    else:
+        form = Post()
+        context = {
+                  'form':form
+              }
 
-  return render(request, 'feed/post.html',context)
+    return render(request, 'feed/post.html',context)

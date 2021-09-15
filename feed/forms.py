@@ -15,4 +15,4 @@ class UpdateProfile(forms.ModelForm):
 class Post(forms.ModelForm):
     class Meta:
         model = Image
-        fields = ['image','name','caption']
+        fields = '__all__'
