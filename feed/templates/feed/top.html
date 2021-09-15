@@ -6,7 +6,7 @@
   <div class="container">
     <div class="top-header">
       <div class="top-flex">
-       <a href=""><h1>Instagram</h1></a> 
+       <a href="{% url 'feed' %}"><h1>Instagram</h1></a> 
         <div class="search">
           <form action="">
             <input type="search" placeholder="search">
@@ -14,7 +14,8 @@
   
         </div>
         <div class="icon">
-          <a href=""><i class="fas fa-house-user"></i></a>
+          <a href="{% url 'feed' %}"><i class="fas fa-house-user"></i></a>
+          <a href="{% url 'post' %}"><i class="fas fa-plus-circle"></i></a>
           <a href=""><i class="fas fa-paper-plane"></i></a>
           <a href=""><i class="far fa-compass"></i></a>
           <a href=""><i class="far fa-heart"></i></a>

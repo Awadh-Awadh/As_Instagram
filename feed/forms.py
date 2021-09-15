@@ -1,7 +1,7 @@
 from django import forms
 from .models import Profile,User, Image
 
-class UpdateProfile(forms.ModelForm):
+class UpdateUser(forms.ModelForm):
     email = forms.EmailField()
     class Meta:
         model = User
