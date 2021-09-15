@@ -45,11 +45,14 @@ legend{
   height: 50px;
   width: 50px;
   border-radius: 100%;
-  box-shadow: 
-  1px 1px #ff4e50,
-  -1px -1px #ff4e50;
   cursor: pointer;
   
+}
+.feedhead-info{
+  border: 4px solid #ff4e50;
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
 }
 .top-flex{
   display: flex;
@@ -74,10 +77,36 @@ a{
   width: 80px;
   border-radius: 100%;
 }
-.profile-info{
+.profile-info,.profile-row,.following{
   display: flex;
 }
 .edit-profile{
   margin: 0 2rem;
 
+}
+
+.profile{
+  align-self: center;
+  align-content: center;
+}
+.profile p{
+  font-weight: 900;
+  margin-top: 1rem;
+  margin-right: 1.5rem;
+}
+.num{
+  text-align: center;
+}
+.num-post{
+  margin-top: 2.7rem;
+}
+.following{
+  margin: 2rem 0;
+}
+.follower{
+  margin: 0 2rem;
+}
+.user-images{
+  width: 200px;
+  height: auto;
 }

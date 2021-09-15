@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Image,Profile,User,Comments
 from .forms import UpdateProfile, UpdateUser,Post
 # Create your views here.
@@ -17,9 +17,10 @@ def dms(request):
 def profile(request):
     logged_in_user = request.user
     posts = Image.objects.filter(user=logged_in_user).count()
-    print(posts)
+    images = Image.objects.filter(user=logged_in_user).all()
     context = {
-      'posts':posts
+      'posts':posts,
+      'images': images
     }
 
     
@@ -32,6 +33,7 @@ def edit(request):
          if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
+            return redirect('profile')
     else:
         u_form = UpdateUser(instance=request.user)
         p_form = UpdateProfile(instance=request.user.profile)

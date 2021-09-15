@@ -7,8 +7,8 @@
 {% for post in posts %}
   <section id="headline">
     <div class="header">
-      <div class="feed-info">
-        <img class = 'head-photo'src="{{post.image.url}}" alt="">
+      <div class="feedhead-info">
+        <img class = 'head-photo'src="{{user.profile.pp.url}}" alt="">
        </div>
     </div>
   </section>
@@ -18,9 +18,17 @@
     <div class="row">
       <div class="col-md-7">
         <div class="feed-content">
-          <div class="profile">
-            <p>{{post.profile}}</p>
+          <div class="profile-row">
+            <div class="header">
+              <div class="feedhead-info">
+                <img class = 'head-photo'src="{{user.profile.pp.url}}" alt="">
+               </div>
+            </div>
+            <div class="profile">
+              <p>{{post.profile}}</p>
+            </div>
           </div>
+          
           <div class="feed-info">
             <img class = 'feed-photo'src="{{post.image.url}}" alt="">
            </div>
