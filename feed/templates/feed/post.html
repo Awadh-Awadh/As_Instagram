@@ -5,7 +5,10 @@
   {% csrf_token %}
 
   {{form|crispy}}
-  <button class = "btn btn-lg btn-outline-dark">Post</button>
+  <div class="button">
+    <button class = "btn btn-lg btn-outline-dark">Post</button>
+  </div>
+  
 </form>
 
 {% endblock %}
