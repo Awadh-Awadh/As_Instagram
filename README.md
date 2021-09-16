@@ -15,7 +15,7 @@ This a clone of Instagram. But it's not exactly as Instagram just a simple appli
 - Users can also edit their profile
 
 ### Deployed link
-
+https://awadhinsta.herokuapp.com/
 
 ##### Cloning the repository:
 
