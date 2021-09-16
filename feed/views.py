@@ -49,6 +49,8 @@ def post(request):
     if request.method == 'POST':
         form = Post(request.POST,request.FILES)
         if form.is_valid():
+            obj= form.save(commit = False)
+            obj.user = request.user
             form.save()
             return redirect('feed')
     else:

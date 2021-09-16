@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.db.models.signals import post_save
+
 
 # Create your models here.
 class Image(models.Model):
@@ -32,3 +34,10 @@ class Comments(models.Model):
     
     def __str__(self):
         return self.comment_name.username
+
+
+# def user_profile(sender,**kwargs):
+#     if kwargs['created']:
+#         prof = Profile.objects.create(user=kwargs['instance'])
+
+# post_save.connect(user_profile, sender=User)

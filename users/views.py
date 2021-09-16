@@ -9,7 +9,9 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
           #saving user
-            form.save()
+            post = form.save(commit=False)
+            post.save()
+
             username = form.cleaned_data.get('username')
             #flush message
             messages.success(request, f'account creation for {username}')

@@ -143,4 +143,5 @@ LOGIN_REDIRECT_URL = 'feed'
 LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGOUT_REDIRECT_URL = 'login'
 

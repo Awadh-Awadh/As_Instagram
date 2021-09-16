@@ -56,12 +56,11 @@
         <div class="user-posts">
           <h2 class = "text-center">Posts</h2>
           {% for post in images %}
-          <div class="profile-profile">
-            <div class="image-cont">
+              <div class="image-cont">
               <img src="{{post.image.url}}" class = "user-images" alt="{{post.name}}" class="profile-post-images">
             </div>
            
-          </div>
+          
           {% endfor %}
         </div>
     </div>
