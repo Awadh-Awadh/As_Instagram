@@ -3,6 +3,7 @@ from .models import Image,Profile,User,Comments
 from .forms import UpdateProfile, UpdateUser,Post
 from django.contrib.auth.decorators import login_required
 # Create your views here.
+     
 
 @login_required
 def feed(request):
@@ -64,8 +65,8 @@ def post(request):
     return render(request, 'feed/post.html',context)
 
 def comment(request):
-  query = request.POST['comment']
+  query = request.POST.get('comment')
   if query:
       comment = Comments.objects.create(comment_body = query)
       comment.save()
-      return redirect('feed')
+      return redirect(feed)

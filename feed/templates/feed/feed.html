@@ -70,10 +70,12 @@
                         <h2>Comments</h2>
                         {% for comment in comments %}
                         <div class="comment">
+                          <a href="">{{comment.comment_name}}</a>
                           <h5>{{comment.comment_body}}</h5>
                         </div>
                         {% endfor %}
-                      </div>
+                        </div>
+                        
                       
                     </div>
                     </div>
@@ -82,9 +84,9 @@
               </div>
             </div>
             <div class="add-comment">
-              <form action = "{% url 'feed'%}" method = 'POST'>
+              <form action ="{% url 'feed' %}" method = 'POST'>
                {% csrf_token %}
-                <input type="text"class = form-control name = 'comment'placeholder="comment">
+                <input type="text"class = form-control name = "comment" placeholder="Add comment">
                 <button class ='btn btn-primary' >Post</button>
               </form>
             </div>

@@ -29,6 +29,9 @@ class Comments(models.Model):
     image = models.ForeignKey(Image,on_delete=models.CASCADE)
     comment_name = models.ForeignKey(User, on_delete=models.CASCADE)
     comment_body = models.TextField()
+
+    def comment_save(self):
+        self.save()
     class Meta:
         verbose_name = 'comment'
     
