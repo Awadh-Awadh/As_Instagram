@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-47s!%qtm$pi3+@c1&opdt8tgznk&-6^yt&a_xvm_!j_-4#&u!q'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'insgram',
-        'USERNAME':'moringa',
-        'PASSWORD': 'Access'
+        'USERNAME':os.environ.get('DB_USERNAME'),
+        'PASSWORD': os.environ.get('PASSWORD')
     }
 }
 
@@ -127,8 +127,8 @@ USE_TZ = True
 #cloudinary config
 cloudinary.config( 
   cloud_name = "die2khepc", 
-  api_key = "466655358734368", 
-  api_secret = "UVVyplom7jX1BzRXM3GjGkOZiG0" 
+  api_key = os.environ.get('API_KEY'), 
+  api_secret = os.environ.get('API_SECRET') 
 )
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

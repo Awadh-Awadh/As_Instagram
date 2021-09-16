@@ -1,11 +1,11 @@
-# As Galleria
-This is an Independent project for Moringa Core Django module, september 3 2021.
+# As InstaClone
+This is an Independent project for Moringa Core Django module, september 10 2021.
 
 ## Author
 Awadh Said
 
 ### Description
-This a clone of Instagram. But it's not exactly as Instagram just a simple application that looks same as instagram
+This a clone of Instagram. But it's not exactly as Instagram just a simple application that looks same as instagram where users can be able to see posts there and comment on different posts. Users can also edit their profiles and check their specific posts.
 
 ### features
 - The home page allows users to see various posts
