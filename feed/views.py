@@ -7,8 +7,10 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def feed(request):
     image = Image.objects.all()
+    comments = Comments.objects.all()
     context = {
-      'posts':image
+      'posts':image,
+      'comments':comments
     }
     return render(request, 'feed/feed.html', context)
 @login_required
@@ -60,3 +62,10 @@ def post(request):
               }
 
     return render(request, 'feed/post.html',context)
+
+def comment(request):
+  query = request.POST['comment']
+  if query:
+      comment = Comments.objects.create(comment_body = query)
+      comment.save()
+      return redirect('feed')

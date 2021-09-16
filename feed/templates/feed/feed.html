@@ -54,21 +54,38 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">{{post.profile}}</h5>
+                      <h5 class="modal-title" id="staticBackdropLabel">{{post.name}}</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                      <div class="feed-info">
-                        <img class = 'feed-photo'src="{{post.image.url}}" alt="">
-                       </div>
+                    <div class="row">
+                      <div class="col-md-7">
+                        <div class="modal-body">
+                          <div class="feed-info">
+                            <img class = 'feed-photo'src="{{post.image.url}}" alt="">
+                           </div>
+                        </div>
+                        
+                      </div>
+                      <div class="col-md-5">
+                        <h2>Comments</h2>
+                        {% for comment in comments %}
+                        <div class="comment">
+                          <h5>{{comment.comment_body}}</h5>
+                        </div>
+                        {% endfor %}
+                      </div>
+                      
                     </div>
-                  </div>
+                    </div>
+                    
                 </div>
               </div>
             </div>
             <div class="add-comment">
-              <form action="">
-                <input type="text"class = form-control placeholder="comment">
+              <form action = "{% url 'feed'%}" method = 'POST'>
+               {% csrf_token %}
+                <input type="text"class = form-control name = 'comment'placeholder="comment">
+                <button class ='btn btn-primary' >Post</button>
               </form>
             </div>
            </div>
