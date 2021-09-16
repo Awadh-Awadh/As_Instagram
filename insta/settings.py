@@ -142,7 +142,7 @@ cloudinary.config(
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICROOT = BASE_DIR/'static'
+STATIC_ROOT = BASE_DIR/'static'
 
 
 # Default primary key field type
