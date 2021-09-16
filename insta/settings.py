@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from posix import environ
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import dj_database_url as dj
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,15 +84,19 @@ WSGI_APPLICATION = 'insta.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'insgram',
-        'USERNAME':os.environ.get('DB_USERNAME'),
-        'PASSWORD': os.environ.get('PASSWORD')
+DATABASES = {}
+PRODUCTION = os.environ.get('PRODUCTION')
+if PRODUCTION == 'True':
+    DATABASES['default'] = dj.config()
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'insgram',
+            'USERNAME':os.environ.get('DB_USERNAME'),
+            'PASSWORD': os.environ.get('PASSWORD')
+        }
     }
-}
 
 
 # Password validation
@@ -134,6 +141,8 @@ cloudinary.config(
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -9,6 +9,9 @@ pillow = "*"
 psycopg2 = "*"
 django-crispy-forms = "*"
 cloudinary = "*"
+dj-database-url = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
