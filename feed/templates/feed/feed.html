@@ -1,115 +1,114 @@
-
 {% extends 'feed/base.html' %}
 
 {% load static %}
 {% block content %}
 {% include 'feed/top.html' %}
 
-  <section id="headline">
-    <div class="header">
-      <div class="feedhead-info">
-        <img class = 'head-photo'src="{{user.profile.pp.url}}" alt="">
-       </div>
+<section id="headline">
+  <div class="header">
+    <div class="feedhead-info">
+      <img class='head-photo' src="{{user.profile.pp.url}}" alt="">
     </div>
-  </section>
-  
-  
-  <section id = "body">
-    
-    <div class="row">
-      {% for post in posts %}
-      <div class="col-md-7">        
-        <div class="feed-content">
-          <div class="profile-row">
-            <div class="header">
-              <div class="feedhead-info">
-                <img class = 'head-photo'src="{{user.profile.pp.url}}" alt="">
-               </div>
-            </div>
-            <div class="profile">
-              <p>{{post.user.username}}</p>
+  </div>
+</section>
+
+
+<section id="body">
+
+  <div class="row">
+    {% for post in posts %}
+    <div class="col-md-7">
+      <div class="feed-content">
+        <div class="profile-row">
+          <div class="header">
+            <div class="feedhead-info">
+              <img class='head-photo' src="{{user.profile.pp.url}}" alt="">
             </div>
           </div>
-          
-          <div class="feed-info">
-            <img class = 'feed-photo'src="{{post.image.url}}" alt="">
-           </div>
-           <div class="feed-info">
-            <a href=""><i class="far fa-heart"></i></a>
-            <a href=""><i class="far fa-comment-dots"></i></a>
-            <a href=""><i class="fas fa-external-link-alt"></i></a>
-            <div class="likes">
-              
-            </div>
-            <div class="caption">
-              <p>{{post.caption}}</p>
-            </div>
-            <div class="comments">
-              <a href = "" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                view all comments
-              </a>
-              
-              <!-- Modal -->
-              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="staticBackdropLabel">{{post.name}}</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-7">
-                        <div class="modal-body">
-                          <div class="feed-info">
-                            <img class = 'feed-photo'src="{{post.image.url}}" alt="">
-                           </div>
+          <div class="profile">
+            <p>{{post.user.username}}</p>
+          </div>
+        </div>
+
+        <div class="feed-info">
+          <img class='feed-photo' src="{{post.image.url}}" alt="">
+        </div>
+        <div class="feed-info">
+          <a href=""><i class="far fa-heart"></i></a>
+          <a href=""><i class="far fa-comment-dots"></i></a>
+          <a href=""><i class="fas fa-external-link-alt"></i></a>
+          <div class="likes">
+
+          </div>
+          <div class="caption">
+            <p>{{post.caption}}</p>
+          </div>
+          <div class="comments">
+            <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              view all comments
+            </a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{post.name}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="modal-body">
+                        <div class="feed-info">
+                          <img class='feed-photo' src="{{post.image.url}}" alt="">
                         </div>
-                        
                       </div>
-                      <div class="col-md-5">
-                        <h2>Comments</h2>
-                        {% for comment in comments %}
-                        <div class="comment">
-                          <a href="">{{comment.comment_name}}</a>
-                          <h5>{{comment.comment_body}}</h5>
-                        </div>
-                        {% endfor %}
-                        </div>
-                        
-                      
+
                     </div>
+                    <div class="col-md-5">
+                      <h2>Comments</h2>
+                      {% for comment in comments %}
+                      <div class="comment">
+                        <a href="">{{comment.comment_name}}</a>
+                        <h5>{{comment.comment_body}}</h5>
+                      </div>
+                      {% endfor %}
                     </div>
-                    
+
+
+                  </div>
                 </div>
+
               </div>
             </div>
-            <div class="add-comment">
-              <form action ="{% url 'feed' %}" method = 'POST'>
-               {% csrf_token %}
-                <input type="text"class = form-control name = "comment" placeholder="Add comment">
-                <button class ='btn btn-primary' >Post</button>
-              </form>
-            </div>
-           </div>
-        </div>       
-      </div>
-      
-      {% endfor %}
-
-      <!-- <div class="col-md-5">
-        <div class="profile">
-          <h3></h3>
-        </div>
-        <div class="you">
-          <h2 class = "text-muted text-center ">Suggestions for you</h2>
+          </div>
+          <div class="add-comment">
+            <form action="{% url 'feed' %}" method='POST'>
+              {% csrf_token %}
+              <input type="text" class=form-control name="comment" placeholder="Add comment">
+              <button class='btn btn-primary'>Post</button>
+            </form>
+          </div>
         </div>
       </div>
-  </div> -->
-    
-  </section>
+    </div>
+    {% endfor %}
+
+    <!-- <div class="col-md-5">
+      <div class="profile">
+        <h3></h3>
+      </div>
+      <div class="you">
+        <h2 class="text-muted text-center ">Suggestions for you</h2>
+      </div>
+    </div> -->
+</div>
+
+</section>
 
 
-  
 
- 
+
+
 {% endblock %}

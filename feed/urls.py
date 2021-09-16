@@ -7,5 +7,6 @@ urlpatterns = [
   path('dm/',views.dms, name = 'dm'),
   path('profile/',views.profile, name = 'profile'),
   path('edit/',views.edit, name = 'edit'),
-  path('post/',views.post, name = 'post')
+  path('post/',views.post, name = 'post'),
+  path('search/',views.search, name = 'search')
   ]

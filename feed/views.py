@@ -70,3 +70,13 @@ def comment(request):
       comment = Comments.objects.create(comment_body = query)
       comment.save()
       return redirect(feed)
+
+
+def search(request):
+    query = request.post.get('q')
+    if query:
+        user = Image.objects.filter(name__icontains = query).all()
+        context = {
+          'user':user
+        }
+        return render(request,'feed/dms.html',context)
